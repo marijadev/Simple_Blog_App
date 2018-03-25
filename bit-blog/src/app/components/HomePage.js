@@ -8,8 +8,6 @@ class HomePage extends React.Component {
         this.state = { posts: [] }
     }
 
-
-
     componentDidMount() {
         servicePost.fetchPosts()
             .then(posts => this.setState({ posts }))

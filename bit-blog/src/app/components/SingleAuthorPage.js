@@ -2,9 +2,6 @@ import React from "react"
 import { BackToAuthors } from "../partials/BackToAuthors";
 import { serviceAuthors } from "../../services/ServiceAuthors";
 
-
-
-
 class SingleAuthorPage extends React.Component {
     constructor(props) {
         super(props);
@@ -15,16 +12,12 @@ class SingleAuthorPage extends React.Component {
     }
 
     componentDidMount() {
-
         serviceAuthors.fetchAuthor(this.state.authorID)
             .then(author => this.setState({ singleAuthor: author }))
-
     }
 
     render() {
-
         const map = `https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d11322.276616522473!2d${this.state.singleAuthor.addressGeoLat}!3d${this.state.singleAuthor.addressGeoLng}!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ssr!2srs!4v1521902112484`
-
         return (
             <div>
                 <BackToAuthors />
@@ -33,7 +26,6 @@ class SingleAuthorPage extends React.Component {
                     <div className="card horizontal">
                         <div className="card-image">
                             <img src="https://lorempixel.com/100/100/nature/" alt="profil" />
-
                         </div>
                         <div className="card-stacked">
                             <div className="card-content">
