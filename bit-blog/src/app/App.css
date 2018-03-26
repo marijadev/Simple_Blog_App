@@ -20,6 +20,11 @@ nav {
   background-color: #78C0E0;
 }
 
+.new-post {
+  background-color: #78C0E0;
+  margin-top:20px;
+}
+
 .homepage-card {
   text-align: center;
   padding: 10px 6%;
