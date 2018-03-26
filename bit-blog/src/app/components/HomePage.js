@@ -11,6 +11,8 @@ class HomePage extends React.Component {
     componentDidMount() {
         servicePost.fetchPosts()
             .then(posts => this.setState({ posts }))
+        const displayNewPost = servicePost.setNewPost();
+        console.log(displayNewPost)
     }
 
     render() {

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Post } from "../../entities/Post"
+import { servicePost } from "../../services/ServicePost";
 
 
 const NewPost = (props) => {
@@ -17,6 +18,7 @@ const NewPost = (props) => {
         //2. make new post object
         const post = new Post(postData);
         localStorage.setItem("newPost", JSON.stringify(post))
+        servicePost.setNewPost(post);
         //4. reset form
         postData.title = ""
         postData.body = ""

@@ -11,11 +11,31 @@ class ServicePost {
                 });
             });
     }
-    fetchPost = (id) => {
-        return fetch(`${url.postsURL}/${id}`)  
+    fetchPost = id => {
+        return fetch(`${url.postsURL}/${id}`)
             .then(response => response.json())
             .then(post => new Post(post))
     }
+
+    setNewPost = comment => {
+        fetch(url.postsURL, {
+            method: "POST",
+            body: JSON.stringify(comment),
+            headers: new Headers({
+                'Content-Type': 'application/json'
+            })
+        })
+            .then(response => {
+                return response.json()
+            })
+            .then(responseData => {
+            })
+            .catch(error => {
+                alert(error)
+            })
+    }
+
+
 
 }
 
